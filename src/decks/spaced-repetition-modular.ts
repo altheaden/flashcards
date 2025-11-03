@@ -234,12 +234,12 @@ export class ModularSpacedRepGen
         card: SpacedRepCardPhysical<SRModularContent, SRModularAuxData>,
         st: SpacedRepState<SRModularContent, SRModularAuxData, SRModularSettings>
     ): Promise<SpacedRepCardPhysical<SRModularContent, SRModularAuxData>> {
-        if (card.data === undefined)
-            return trivialPromise(card);
+        if (card.data === undefined) { return trivialPromise(card); }
 
         var cardType = card.data!.content.cardType;
         var cardEntry = card.data!.content.cardEntry;
-        var dp = gCardTypeRegistry[cardType].processEntry(cardEntry, st.settings.cardTypeSettings[cardType]);
+        var context = { preventReversedCard: card.data!.intervalMinutes == 0 };
+        var dp = gCardTypeRegistry[cardType].processEntry(cardEntry, st.settings.cardTypeSettings[cardType], context);
     
         return dp.then((d) => {
             card.data!.content.cardData = d;

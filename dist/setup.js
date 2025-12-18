@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const flashcard_deck_1 = require("core/flashcard-deck");
+const decklist_1 = require("core/decklist");
+require("decks/times-tables-gen");
+require("decks/uniform-key-value");
+require("decks/spaced-repetition-universal");
+require("decks/transcript-gen");
+require("utils/basic-template");
+require("utils/cloze-template");
+require("utils/noanswer-template");
+require("utils/transcript-template");
+(0, decklist_1.setupDecklistMenu)();
+(0, flashcard_deck_1.loadAllDecks)().then((_) => (0, flashcard_deck_1.runDeck)((0, flashcard_deck_1.getStartingDeck)("key-value-quizzer")));

@@ -136,23 +136,23 @@ button:focus-visible {
 }
 
 .flashcard-slide-in {
-    animation: card-slide-in 0.8s;
+    animation: card-slide-in 0s;
     animation-timing-function: ease-in-out;
 }
 
 .flashcard-slide-out {
-    animation: card-slide-out 0.8s;
+    animation: card-slide-out 0s;
     animation-timing-function: ease-in-out;
-    background-color: #e8f0e8;
+    /* background-color: #e8f0e8; */
 }
 
 .flashcard-slide-out-unanswered {
-    animation: card-slide-out 0.8s;
+    animation: card-slide-out 0s;
     animation-timing-function: ease-in-out;
 }
 
 .flashcard-incorrect {
-    animation: card-wrong 0.4s;
+    animation: card-wrong 0s;
     animation-timing-function: ease-in-out;
 }
 
